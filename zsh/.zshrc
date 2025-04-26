@@ -1,5 +1,5 @@
 
-eval "$(starship init zsh)"
+
 
 #~~~~Syntax Highlighting Settings~~~~
 
@@ -90,7 +90,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_FIND_NO_DUPS
 
-
+eval "$(starship init zsh)"
 
 
 
