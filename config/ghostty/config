@@ -1,0 +1,70 @@
+#To get default values
+#ghostty +show-config --default --docs
+
+#default values file stored:
+#~/dev/github/ghostty/config_default
+
+#Current settings do not have hash before key:value
+
+#Themes:
+
+#theme = catppuccin-mocha
+theme = light:catppuccin-frappe,dark:catppuccin-mocha
+#theme = Afterglow
+#theme = Arthur
+#theme = Popping and Locking
+#theme = Nordfox
+#theme = Japanesque
+#theme = Adventure
+#theme = Ayu Mirage
+#theme = carbonfox
+#theme = duskfox
+#theme = Hybrid
+
+#BACKGROUND SETTINGS:
+
+#Colors
+
+#black
+#background = #0D0D0D
+
+#dark grey
+#background = #181818
+
+#mid grey
+#background = #393939
+
+
+#Blur
+#background-blur-radius = 10
+
+
+#Opacity
+background-opacity = .95
+
+font-size = 16
+
+
+mouse-hide-while-typing = true
+
+window-decoration = true
+
+#Main Text Color:
+
+#olive
+#foreground = #BAB86C
+
+#dark olive
+#foreground = #8A8841
+
+#mauve
+#foreground = #cba6f7
+
+#lavender
+#foreground = #b4befe
+
+cursor-color =
+
+font-family = GoMono Nerd Font Mono
+#font-family = OverpassM Nerd Font Mono Bold
+#font-family = OverpassM Nerd Font Mono Bold
