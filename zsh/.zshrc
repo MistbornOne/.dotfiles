@@ -3,6 +3,8 @@
 
 export PATH="$PATH:/Users/ianwatkins/dev/github/MistbornOne/projects/programs"
 
+export PATH="$PATH:/Users/ianwatkins/.dotfiles/scripts"
+
 #~~~~~~~~~~ Starship Init ~~~~~~~~~~
 
 eval "$(starship init zsh)"
