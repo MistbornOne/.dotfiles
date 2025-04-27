@@ -3,7 +3,7 @@
 
 export PATH="$PATH:/Users/ianwatkins/dev/github/MistbornOne/projects/programs"
 
-export PATH="$PATH:/Users/ianwatkins/.dotfiles/scripts"
+export PATH="$PATH:/Users/ianwatkins/scripts"
 
 #~~~~~~~~~~ Starship Init ~~~~~~~~~~
 
