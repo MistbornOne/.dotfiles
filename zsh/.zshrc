@@ -1,4 +1,10 @@
 
+#~~~~~~~~~~ PATH ~~~~~~~~~~
+
+export PATH="$PATH:/Users/ianwatkins/dev/github/MistbornOne/projects/programs"
+
+#~~~~~~~~~~ Starship Init ~~~~~~~~~~
+
 eval "$(starship init zsh)"
 
 #~~~~Syntax Highlighting Settings~~~~
