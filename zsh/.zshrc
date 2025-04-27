@@ -46,7 +46,8 @@ zstyle ':completion:*' menu no
 # Alias for creating Obsidian notes
 alias on='python3 $HOME/dev/github/MistbornOne/projects/scripts/obsidian-new.py'
 
-alias dotup="~/.dotfiles/scripts/update.sh"
+alias update="~/scripts/update.sh"
+alias sync-"~/scripts/gitsync.sh"
 
 #~~~~Envman Settings~~~~
 
