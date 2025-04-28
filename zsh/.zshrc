@@ -1,9 +1,21 @@
 
 #~~~~~~~~~~ PATH ~~~~~~~~~~
+path=(
+  $path
+  $HOME/scripts
+  )
 
-export PATH="$PATH:/Users/ianwatkins/dev/github/MistbornOne/projects/programs"
+typeset -U path
+path=($^path(N-/))
 
-export PATH="$PATH:/Users/ianwatkins/scripts"
+export PATH
+
+#export PATH="$PATH:/Users/ianwatkins/dev/github/MistbornOne/projects/programs"
+
+#export PATH="$PATH:/Users/ianwatkins/scripts"
+
+
+
 
 #~~~~~~~~~~ Starship Init ~~~~~~~~~~
 
@@ -49,6 +61,7 @@ alias on='python3 $HOME/dev/github/MistbornOne/projects/scripts/obsidian-new.py'
 alias update="~/scripts/update.sh"
 alias sync="~/scripts/gitsync.sh"
 alias dot=". ~/scripts/dotfiles.sh"
+alias path="~/scripts/path.sh"
 
 #~~~~Envman Settings~~~~
 
