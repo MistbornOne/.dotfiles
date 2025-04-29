@@ -8,8 +8,8 @@
 
 #Themes:
 
-#theme = catppuccin-mocha
-theme = light:catppuccin-frappe,dark:catppuccin-mocha
+theme = catppuccin-mocha
+#theme = light:catppuccin-frappe,dark:catppuccin-mocha
 #theme = Afterglow
 #theme = Arthur
 #theme = Popping and Locking
@@ -40,7 +40,7 @@ theme = light:catppuccin-frappe,dark:catppuccin-mocha
 
 
 #Opacity
-background-opacity = .95
+#background-opacity = .95
 
 font-size = 16
 
