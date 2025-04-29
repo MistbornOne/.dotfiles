@@ -43,7 +43,7 @@ def create_note(title=DEFAULT_TITLE):
 
     # Generate timestamp for frontmatter only
     now = datetime.datetime.now()
-    date_formatted = now.strftime("%Y-%m-%d %H:%M:%S")
+    date_formatted = now.strftime("%m-%d-%Y %H:%M:%S")
 
     # Create filename from slug only (no timestamp)
     slug = slugify(title)
@@ -70,10 +70,9 @@ def create_note(title=DEFAULT_TITLE):
 title: "{title}"
 date: {date_formatted}
 tags: []
-status: inbox
 ---
 
-# {title_formatted}
+## {title_formatted}
 
 """
         )
