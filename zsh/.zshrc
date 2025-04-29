@@ -63,6 +63,7 @@ alias sync="~/scripts/gitsync.sh"
 alias dot=". ~/scripts/dotfiles.sh"
 alias path="~/scripts/path.sh"
 alias gendate="~/scripts/gendate.sh"
+alias scr=". ~/scripts/scriptspath.sh"
 #~~~~Envman Settings~~~~
 
 # Generated for envman. Do not edit.
