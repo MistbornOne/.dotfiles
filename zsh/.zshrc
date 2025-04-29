@@ -65,6 +65,7 @@ alias path="~/scripts/path.sh"
 alias gendate="~/scripts/gendate.sh"
 alias scr=". ~/scripts/scriptspath.sh"
 alias notes=". ~/scripts/notespath.sh"
+alias dev=". ~/scripts/devpath.sh"
 #~~~~Envman Settings~~~~
 
 # Generated for envman. Do not edit.
