@@ -1,3 +1,6 @@
 #!/bin/zsh
 
-echo 04/28/2025
+now=$( date +'%a %m/%d/%Y' )
+
+
+echo $now
