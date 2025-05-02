@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-cd ~/dev/github/MistbornOne/blog/
+cd ~/dev/github/MistbornOne/blog/ian-watkins/
