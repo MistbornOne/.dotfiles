@@ -56,7 +56,7 @@ zstyle ':completion:*' menu no
 #~~~~Alias~~~~
 
 # Alias for creating Obsidian notes
-alias on='python3 ~/.dotfiles/scripts/scripts/obsidian-new.py'
+alias on='python3 ~/scripts/obsidian-new.py'
 
 alias update="~/scripts/update.sh"
 alias sync="~/scripts/gitsync.sh"
@@ -67,6 +67,7 @@ alias scr=". ~/scripts/scriptspath.sh"
 alias notes=". ~/scripts/notespath.sh"
 alias dev=". ~/scripts/devpath.sh"
 alias blog=". ~/scripts/blog.sh"
+alias post=". ~/scripts/blogpost.sh"
 #~~~~Envman Settings~~~~
 
 # Generated for envman. Do not edit.

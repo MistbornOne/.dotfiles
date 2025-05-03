@@ -38,7 +38,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>ti",
-	":.!'/Users/ianwatkins/dev/github/MistbornOne/projects/programs/title'<CR>",
+	":.!'/Users/ianwatkins/scripts/title/'<CR>",
 	{ noremap = true, silent = true }
 )
 
@@ -46,7 +46,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>tb",
-	":.!sh -c '\"/Users/ianwatkins/dev/github/MistbornOne/projects/programs/title\" -b'<CR>",
+	":.!sh -c '\"/Users/ianwatkins/scripts/title\" -b'<CR>",
 	{ noremap = true, silent = true }
 )
 
@@ -54,7 +54,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>th",
-	":.!sh -c '\"/Users/ianwatkins/dev/github/MistbornOne/projects/programs/title\" -h=2'<CR>",
+	":.!sh -c '\"/Users/ianwatkins/scripts/title\" -h=2'<CR>",
 	{ noremap = true, silent = true }
 )
 
