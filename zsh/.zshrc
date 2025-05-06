@@ -68,6 +68,8 @@ alias notes=". ~/scripts/notespath.sh"
 alias dev=". ~/scripts/devpath.sh"
 alias blog=". ~/scripts/blog.sh"
 alias post=". ~/scripts/blogpost.sh"
+alias jk="clear" 
+
 #~~~~Envman Settings~~~~
 
 # Generated for envman. Do not edit.
