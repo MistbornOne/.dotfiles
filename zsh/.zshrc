@@ -68,6 +68,7 @@ alias notes=". ~/scripts/notespath.sh"
 alias dev=". ~/scripts/devpath.sh"
 alias blog=". ~/scripts/blog.sh"
 alias post=". ~/scripts/blogpost.sh"
+alias games=". ~/scripts/games.sh"
 alias jk="clear" 
 
 #~~~~Envman Settings~~~~
