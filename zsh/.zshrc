@@ -57,6 +57,7 @@ zstyle ':completion:*' menu no
 
 # Alias for creating Obsidian notes
 alias on='python3 ~/scripts/obsidian-new.py'
+alias ink='python3 ~/scripts/inkdrop-new.py'
 
 alias update="~/scripts/update.sh"
 alias sync="~/scripts/gitsync.sh"
