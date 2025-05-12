@@ -79,9 +79,9 @@ return {
 		end
 
 		--vim.schedule(function()
-		--local mason_lspconfig = require("mason-lspconfig")
+		local mason_lspconfig = require("mason-lspconfig")
 		--local lspconfig = require("lspconfig")
-		--local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		mason_lspconfig.setup()
 
 		mason_lspconfig.setup_handlers({
 			-- default handler for installed servers
