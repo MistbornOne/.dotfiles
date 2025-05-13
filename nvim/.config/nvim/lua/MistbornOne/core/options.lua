@@ -47,10 +47,11 @@ opt.swapfile = false
 
 -- folds
 vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- or use the custom version
 vim.opt.foldenable = true
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
+vim.opt.foldcolumn = "1"
 
 -- Create Obsidian note command (alternative implementation)
 vim.api.nvim_create_user_command("ObsidianInbox", function(opts)

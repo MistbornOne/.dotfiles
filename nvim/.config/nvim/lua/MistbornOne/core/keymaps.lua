@@ -16,11 +16,12 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- keymap.set("n", "x", '"_x')
 
 -- folds
+
 keymap.set("n", "<leader>z", "za", { desc = "Toggle fold under cursor" })
 keymap.set("n", "<leader>zo", "zO", { desc = "Open nested folds under cursor" })
 keymap.set("n", "<leader>zc", "zC", { desc = "Close nested folds under cursor" })
-keymap.set("n", "<leader>zR", "zR", { desc = "Open all folds" })
-keymap.set("n", "<leader>zM", "zM", { desc = "Close all folds" })
+keymap.set("n", "<leader>zr", "zR", { desc = "Open all folds" })
+keymap.set("n", "<leader>zm", "zM", { desc = "Close all folds" })
 keymap.set("n", "<leader>zx", "zx", { desc = "Recalculate folds" })
 keymap.set("n", "<leader>zf", ":set foldenable!<CR>", { desc = "Toggle folding on/off", silent = true })
 
