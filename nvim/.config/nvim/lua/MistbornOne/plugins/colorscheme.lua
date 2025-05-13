@@ -5,6 +5,10 @@ return {
 		config = function()
 			require("catppuccin").setup({
 				flavour = "mocha",
+				styles = {
+					keywords = { "italic" },
+					comments = { "italic" },
+				},
 				-- transparent_background = true,
 				background = {
 					dark = "mocha",
