@@ -18,7 +18,7 @@ return {
 		}
 
 		-- Set the footer with custom message
-		dashboard.section.footer.val = "MistbornOne Neovim 🧠"
+		--dashboard.section.footer.val = "MistbornOne Neovim 🧠"
 
 		-- Set menu
 		dashboard.section.buttons.val = {
