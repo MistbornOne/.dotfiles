@@ -45,6 +45,13 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
+-- folds
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+
 -- Create Obsidian note command (alternative implementation)
 vim.api.nvim_create_user_command("ObsidianInbox", function(opts)
 	local args = opts.args ~= "" and opts.args or ""
