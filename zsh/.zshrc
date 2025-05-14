@@ -72,6 +72,7 @@ alias blog=". ~/scripts/blog.sh"
 alias post=". ~/scripts/blogpost.sh"
 alias games=". ~/scripts/games.sh"
 alias jk="clear" 
+alias fzf="fzf --bind 'enter:become(nvim {})'"
 
 #~~~~Envman Settings~~~~
 
