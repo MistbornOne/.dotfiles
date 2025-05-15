@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-cd ~/Work/OneDrive -\ ASAP\ Site\ Services/
+cd "$HOME/Work/OneDrive - ASAP Site Services/"
