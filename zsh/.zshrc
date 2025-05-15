@@ -1,5 +1,7 @@
 
-#~~~~~~~~~~ PATH ~~~~~~~~~~
+#==============================
+# ============ PATH ===========
+# =============================
 path=(
   $path
   $HOME/scripts
@@ -15,21 +17,22 @@ export PATH
 #export PATH="$PATH:/Users/ianwatkins/scripts"
 
 
-
-
-#~~~~~~~~~~ Starship Init ~~~~~~~~~~
+#========================================
+# ============ Starship Init ============
+#========================================
 
 eval "$(starship init zsh)"
 
-#~~~~Syntax Highlighting Settings~~~~
-
+#=======================================================
+# ============ Syntax Highlighting Settings ============
+#=======================================================
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-
-#~~~~zsh Completion Settings~~~~
-
+#==================================================
+# ============ zsh Completion Settings ============
+#==================================================
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -38,12 +41,15 @@ if type brew &>/dev/null; then
     compinit
   fi
 
-
-#~~~~zsh Suggestions~~~~
+#==========================================
+# ============ zsh Suggestions ============
+#==========================================
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-#Keybindings 
+#==============================================
+# ============ Keybindings Section ============
+#==============================================
 bindkey -e
 bindkey ";k" history-search-backward
 bindkey ";j" history-search-forward
@@ -52,25 +58,33 @@ bindkey ";j" history-search-forward
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu no
 
-
-#~~~~Alias~~~~
+#========================================
+# ============ Alias Section ============
+#========================================
 
 # Alias for creating Obsidian notes
 alias on='python3 ~/scripts/obsidian-new.py'
+# Alias for creating Inkdrop notes
 alias ink='python3 ~/scripts/inkdrop-new.py'
 
+# Update scripts
 alias update="~/scripts/update.sh"
 alias sync="~/scripts/gitsync.sh"
+alias gendate="~/scripts/gendate.sh"
+alias post=". ~/scripts/blogpost.sh"
+
+# Path scripts
 alias dot=". ~/scripts/dotfiles.sh"
 alias path="~/scripts/path.sh"
-alias gendate="~/scripts/gendate.sh"
 alias scr=". ~/scripts/scriptspath.sh"
 alias notes=". ~/scripts/notespath.sh"
 alias idn=". ~/scripts/inkdrop.sh"
 alias dev=". ~/scripts/devpath.sh"
 alias blog=". ~/scripts/blog.sh"
-alias post=". ~/scripts/blogpost.sh"
+alias drive=". ~/scripts/one-drive-path.sh"
 alias games=". ~/scripts/games.sh"
+
+# Alias Mapping for Functions
 alias jk="clear" 
 alias fzf="fzf --bind 'enter:become(nvim {})'"
 
