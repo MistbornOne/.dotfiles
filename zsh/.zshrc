@@ -83,6 +83,7 @@ alias dev=". ~/scripts/devpath.sh"
 alias blog=". ~/scripts/blog.sh"
 alias drive=". ~/scripts/one-drive-path.sh"
 alias games=". ~/scripts/games.sh"
+alias vc=". ~/scripts/nvim_config.sh"
 
 # Alias Mapping for Functions
 alias jk="clear" 
