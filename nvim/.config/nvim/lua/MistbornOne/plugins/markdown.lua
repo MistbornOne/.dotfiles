@@ -24,6 +24,12 @@ return {
 				path = "~/Documents/Obsidian",
 			},
 		},
+
+		templates = {
+			folder = "Templates",
+			date_format = "%m-%d-%Y",
+		},
+
 		ui = { enable = false },
 
 		-- see below for full list of options 👇

@@ -12,7 +12,7 @@ case "$1" in
 esac
 
 # Choose file or directory
-selection=$(fd . "$target_dir" | fzf --height=60% --layout=default --border --preview "bat --style=numbers --color=always {} || head {}")
+selection=$(fd . "$target_dir" | fzf --height=80% --layout=default --border --preview "bat --style=numbers --color=always {} || head {}")
 
 # Exit if nothing was selected
 [[ -z "$selection" ]] && exit 0
