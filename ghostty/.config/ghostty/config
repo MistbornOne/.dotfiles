@@ -29,6 +29,15 @@ theme = catppuccin-mocha
 #black
 #background = #0D0D0D
 
+#black
+background = #1D1D1D
+
+#blackish
+#background = #18181A
+
+#ink
+#background = #222121
+
 #dark grey
 #background = #181818
 
@@ -37,11 +46,11 @@ theme = catppuccin-mocha
 
 
 #Blur
-#background-blur-radius = 10
+background-blur-radius = 50
 
 
 #Opacity
-#background-opacity = .95
+background-opacity = .95
 
 
 # ============ MOUSE ============
