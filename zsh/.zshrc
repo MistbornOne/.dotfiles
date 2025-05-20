@@ -75,6 +75,7 @@ alias update="~/scripts/update.sh"
 alias sync="~/scripts/gitsync.sh"
 alias gendate="~/scripts/gendate.sh"
 alias post=". ~/scripts/blogpost.sh"
+alias today='~/scripts/edit_today.sh'
 
 # Path scripts
 alias dot=". ~/scripts/dotfiles.sh"
