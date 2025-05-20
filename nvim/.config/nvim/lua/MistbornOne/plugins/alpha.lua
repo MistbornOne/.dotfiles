@@ -17,6 +17,12 @@ return {
 			"                                                     ",
 		}
 
+		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#636B2F", bold = true })
+		dashboard.section.header.opts = {
+			hl = "AlphaHeader",
+			position = "center",
+		}
+
 		-- Set the footer with custom message
 		--dashboard.section.footer.val = "MistbornOne Neovim 🧠"
 
