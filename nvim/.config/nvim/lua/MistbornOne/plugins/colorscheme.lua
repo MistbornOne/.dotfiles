@@ -1,7 +1,7 @@
 return {
 	{
 		"catppuccin/nvim",
-		priority = 1000, -- make sure to load this before all the other start plugins
+		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
 				flavour = "mocha",
@@ -10,15 +10,28 @@ return {
 					comments = { "italic" },
 				},
 				transparent_background = true,
+
 				custom_highlights = {
-					Type = { fg = "#8C9440" },
-					String = { fg = "#B5BD67" },
-					Constant = { fg = "#f38ba8" },
-					Boolean = { fg = "#f4b8e4" },
-					Number = { fg = "#e5c890" },
-					["@function.builtin"] = { fg = "#ed8796" },
-					["@markup.heading.1.markdown"] = { fg = "#74c7ec" },
-					["@markup.heading.2.markdown"] = { fg = "#f4b8e4" },
+					-- Nord-inspired palette
+					Comment = { fg = "#616E88" }, -- nord3
+					Keyword = { fg = "#81A1C1", italic = true }, -- nord9
+					Function = { fg = "#88C0D0" }, -- nord8
+					String = { fg = "#A3BE8C" }, -- nord14
+					Number = { fg = "#B48EAD" }, -- nord15
+					Boolean = { fg = "#f4b8e4" }, -- nord11
+					Type = { fg = "#8FBCBB" }, -- nord7
+					Constant = { fg = "#A6ADC8" }, -- catppuccin mocha subtext 0
+					LineNr = { fg = "#4C566A" }, -- dim grey (nord3)
+					CursorLineNr = { fg = "#88C0D0", bold = true }, -- nord8
+					CursorLine = { bg = "#2E3440" }, -- soft nord0 backgroun
+					["@function.builtin"] = { fg = "#F38BA8" }, -- nord9
+					["@variable"] = { fg = "#BAC2DE" }, -- catppuccin mocha subtext 1
+					["@markup.heading.1.markdown"] = { fg = "#CBA6F7", bold = true }, -- catppuccin mocha mauve
+					["@markup.heading.2.markdown"] = { fg = "#A3BE8C", bold = true }, -- nord14
+					["@markup.heading.3.markdown"] = { fg = "#EBA0AC", bold = true }, -- catppuccin mocha maroon
+					["@markup.heading.4.markdown"] = { fg = "#88C0D0", bold = true }, -- nord8
+					["@markup.strong.markdown_inline"] = { fg = "#F4B8E4", bold = true }, -- catppuccin mocha pink
+					["@markup.italic.markdown_inline"] = { fg = "#F4B8E4", italic = true }, -- catppuccin mocha pink
 				},
 
 				integrations = {
@@ -35,7 +48,6 @@ return {
 				},
 			})
 
-			-- now load the colorscheme separately
 			vim.cmd([[colorscheme catppuccin]])
 		end,
 	},

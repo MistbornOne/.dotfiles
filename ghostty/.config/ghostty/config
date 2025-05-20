@@ -53,6 +53,7 @@ background-blur-radius = 50
 background-opacity = .95
 
 
+
 # ============ MOUSE ============
 
 mouse-hide-while-typing = true
