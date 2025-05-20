@@ -20,15 +20,38 @@ return {
 		ui = { enable = false },
 	},
 	config = function()
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = "markdown",
+		vim.api.nvim_create_autocmd("BufWinEnter", {
+			pattern = "*.md",
 			callback = function()
-				vim.opt_local.foldmethod = "expr"
-				vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
-				vim.opt_local.foldenable = true
-				vim.opt_local.foldlevel = 1
-				vim.opt_local.foldlevelstart = 1
-				vim.opt_local.foldcolumn = "1"
+				local path = vim.fn.expand("%:p")
+				local home = vim.fn.expand("~")
+				local target_dir = home .. "/Documents/Obsidian/Work/Meetings/1:1/"
+
+				if path:find(target_dir, 1, true) then
+					-- Set manual folding mode
+					vim.opt_local.foldmethod = "manual"
+					vim.opt_local.foldenable = true
+					vim.opt_local.foldcolumn = "1"
+
+					-- Fold every ## ... heading block
+					vim.defer_fn(function()
+						local bufnr = vim.api.nvim_get_current_buf()
+						local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+						local folds = {}
+
+						for i, line in ipairs(lines) do
+							if line:match("^## ") then
+								table.insert(folds, i)
+							end
+						end
+
+						for j = 1, #folds do
+							local start = folds[j]
+							local finish = folds[j + 1] and (folds[j + 1] - 1) or (#lines - 1)
+							vim.cmd(start .. "," .. finish .. "fold")
+						end
+					end, 50)
+				end
 			end,
 		})
 	end,

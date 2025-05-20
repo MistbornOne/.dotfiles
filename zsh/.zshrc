@@ -89,6 +89,7 @@ alias games=". ~/scripts/games.sh"
 alias vc=". ~/scripts/nvim_config.sh"
 alias f="~/scripts/fzf_dir.sh"
 alias proj=". ~/scripts/projectspath.sh"
+alias daily=". ~/scripts/daily_note_path.sh"
 
 # Alias Mapping for Functions
 alias jk="clear" 
