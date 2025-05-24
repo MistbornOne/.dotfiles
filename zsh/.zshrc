@@ -5,6 +5,7 @@
 path=(
   $path
   $HOME/scripts
+  $HOME/.local/opt/go-bin-v1.24.2/
   )
 
 typeset -U path
@@ -76,6 +77,8 @@ alias sync="~/scripts/gitsync.sh"
 alias gendate="~/scripts/gendate.sh"
 alias post=". ~/scripts/blogpost.sh"
 alias today='~/scripts/edit_today.sh'
+alias habit='~/go/bin/habits-cli'
+
 
 # Path scripts
 alias dot=". ~/scripts/dotfiles.sh"
@@ -91,6 +94,8 @@ alias vc=". ~/scripts/nvim_config.sh"
 alias f="~/scripts/fzf_dir.sh"
 alias proj=". ~/scripts/projectspath.sh"
 alias daily=". ~/scripts/daily_note_path.sh"
+alias habits=". ~/scripts/habits.sh"
+
 
 # Alias Mapping for Functions
 alias jk="clear" 
