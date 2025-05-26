@@ -67,6 +67,7 @@ zstyle ':completion:*' menu no
 alias on='python3 ~/scripts/obsidian-new.py'
 # Alias for creating Inkdrop notes
 alias ink='python3 ~/scripts/inkdrop-new.py'
+
 alias meet='python3 ~/scripts/new_meeting.py'
 alias 1on1='python3 ~/scripts/append_1on1_note.py'
 alias day='python3 ~/scripts/daily_note.py'
@@ -95,11 +96,12 @@ alias f="~/scripts/fzf_dir.sh"
 alias proj=". ~/scripts/projectspath.sh"
 alias daily=". ~/scripts/daily_note_path.sh"
 alias habits=". ~/scripts/habits.sh"
-
+alias home=". ~/scripts/home.sh"
 
 # Alias Mapping for Functions
 alias jk="clear" 
 alias fzf="fzf --bind 'enter:become(nvim {})'"
+alias z="source ~/.zshrc"
 
 #~~~~Envman Settings~~~~
 
