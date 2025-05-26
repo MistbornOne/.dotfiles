@@ -8,8 +8,9 @@
 
 # ============  THEMES  ============ 
 
-theme = catppuccin-mocha
+#theme = catppuccin-mocha
 #theme = light:catppuccin-frappe,dark:catppuccin-mocha
+theme = nord-wave
 #theme = Afterglow
 #theme = Arthur
 #theme = Popping and Locking
@@ -22,6 +23,7 @@ theme = catppuccin-mocha
 #theme = Hybrid
 #theme = tokyonight_moon
 
+
 # ============ BACKGROUND SETTINGS ============
 
 #Colors
@@ -30,7 +32,7 @@ theme = catppuccin-mocha
 #background = #0D0D0D
 
 #black
-background = #1D1D1D
+#background = #1D1D1D
 
 #blackish
 #background = #18181A
@@ -45,12 +47,14 @@ background = #1D1D1D
 #background = #393939
 
 
+
+
 #Blur
 background-blur-radius = 50
 
 
 #Opacity
-background-opacity = .95
+background-opacity = .90
 
 
 

@@ -78,8 +78,7 @@ alias sync="~/scripts/gitsync.sh"
 alias gendate="~/scripts/gendate.sh"
 alias post=". ~/scripts/blogpost.sh"
 alias today='~/scripts/edit_today.sh'
-alias habit='~/go/bin/habits-cli'
-
+alias habits=". ~/scripts/habits.sh"
 
 # Path scripts
 alias dot=". ~/scripts/dotfiles.sh"
@@ -95,7 +94,6 @@ alias vc=". ~/scripts/nvim_config.sh"
 alias f="~/scripts/fzf_dir.sh"
 alias proj=". ~/scripts/projectspath.sh"
 alias daily=". ~/scripts/daily_note_path.sh"
-alias habits=". ~/scripts/habits.sh"
 alias home=". ~/scripts/home.sh"
 
 # Alias Mapping for Functions
