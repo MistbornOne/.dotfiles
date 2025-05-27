@@ -50,7 +50,7 @@ theme = nord-wave
 
 
 #Blur
-background-blur-radius = 50
+background-blur-radius = 90
 
 
 #Opacity
