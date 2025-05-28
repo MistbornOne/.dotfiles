@@ -13,6 +13,7 @@ path=($^path(N-/))
 
 export PATH
 
+
 #export PATH="$PATH:/Users/ianwatkins/dev/github/MistbornOne/projects/programs"
 
 #export PATH="$PATH:/Users/ianwatkins/scripts"
@@ -79,6 +80,7 @@ alias gendate="~/scripts/gendate.sh"
 alias post=". ~/scripts/blogpost.sh"
 alias today='~/scripts/edit_today.sh'
 alias habits=". ~/scripts/habits.sh"
+alias tutor=". ~/scripts/codetutor.sh"
 
 # Path scripts
 alias dot=". ~/scripts/dotfiles.sh"
