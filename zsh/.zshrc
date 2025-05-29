@@ -72,6 +72,7 @@ alias ink='python3 ~/scripts/inkdrop-new.py'
 alias meet='python3 ~/scripts/new_meeting.py'
 alias 1on1='python3 ~/scripts/append_1on1_note.py'
 alias day='python3 ~/scripts/daily_note.py'
+alias trd='python3 ~/scripts/append_meeting.py'
 
 # Update scripts
 alias update="~/scripts/update.sh"
@@ -130,7 +131,7 @@ eval $(thefuck --alias fk)
 
 eval "$(fzf --zsh)"
 
-export FZF_DEFAULT_COMMAND= "fd --hidden --strip-cwd-prefix --exclude .git"
+#export FZF_DEFAULT_COMMAND= "fd --hidden --strip-cwd-prefix --exclude .git"
 
 
 

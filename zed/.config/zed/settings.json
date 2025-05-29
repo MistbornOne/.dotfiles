@@ -7,13 +7,62 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "model_parameters": [],
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
+    },
+    "version": "2"
+  },
   "base_keymap": "VSCode",
-  "vim_mode": false,
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "vim_use_system_clipboard": true,
+  "cursor_blink": false,
+  "vim_yank_highlight": true,
+  "vim_yank_highlight_duration": 500,
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "theme": {
-    "mode": "system",
-    "light": "Catppuccin Mocha",
-    "dark": "One Dark"
+    "mode": "dark",
+    "light": "Nord",
+    "dark": "BlackFox"
+  },
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "color": "#616E88",
+        "font_style": "italic"
+      },
+      "keyword": {
+        "color": "#81A1C1",
+        "font_style": "italic"
+      },
+      "function": {
+        "color": "#88C0D0"
+      },
+      "string": {
+        "color": "#A3BE8C"
+      },
+      "number": {
+        "color": "#B48EAD"
+      },
+      "boolean": {
+        "color": "#f4b8e4"
+      },
+      "type": {
+        "color": "#8FBCBB"
+      },
+      "constant": {
+        "color": "#A6ADC8"
+      },
+      "variable": {
+        "color": "#BAC2DE"
+      },
+      "function.builtin": {
+        "color": "#F38BA8"
+      }
+    }
   }
 }
