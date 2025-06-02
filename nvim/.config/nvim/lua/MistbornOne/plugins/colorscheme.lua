@@ -23,7 +23,7 @@ return {
 					Constant = { fg = "#A6ADC8" }, -- catppuccin mocha subtext 0
 					LineNr = { fg = "#4C566A" }, -- dim grey (nord3)
 					CursorLineNr = { fg = "#88C0D0", bold = true }, -- nord8
-					CursorLine = { bg = "#2E3440" }, -- soft nord0 backgroun
+					CursorLine = { bg = "#3A3A3A" }, -- soft nord0 backgroun
 					["@function.builtin"] = { fg = "#F38BA8" }, -- nord9
 					["@variable"] = { fg = "#BAC2DE" }, -- catppuccin mocha subtext 1
 					["@markup.heading.1.markdown"] = { fg = "#CBA6F7", bold = true }, -- catppuccin mocha mauve
