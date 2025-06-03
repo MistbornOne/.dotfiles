@@ -102,3 +102,7 @@ end, { desc = "Create new Obsidian note" })
 
 -- Alternative without prompt (if you prefer to pass the title as command args)
 vim.keymap.set("n", "<leader>oN", ":ObsidianInbox ", { desc = "Create Obsidian note with title" })
+
+-- Copilot keymaps
+vim.keymap.set("n", "<leader>cd", "<cmd>Copilot disable<CR>", { desc = "Disable Copilot" })
+vim.keymap.set("n", "<leader>ce", "<cmd>Copilot enable<CR>", { desc = "Enable Copilot" })
