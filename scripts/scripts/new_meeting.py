@@ -7,7 +7,7 @@ today = date.today()
 formatted_date = today.strftime("%Y-%m-%d")
 meet_dir = Path.home() / "Documents" / "Obsidian" / "Work" / "ASAP" / "Meetings"
 
-rme_meet_dir = Path.home() / "Documents" / "Obsidian" / "Work" / "RME" / "Meetings"
+# rme_meet_dir = Path.home() / "Documents" / "Obsidian" / "Work" / "RME" / "Meetings"
 coaching_dir = (
     Path.home() / "Documents" / "Obsidian" / "Work" / "ASAP" / "Meetings" / "1:1"
 )
@@ -43,29 +43,19 @@ def create_note(template_path, output_path, replacements, dir_path):
 #      Meetings
 # =====================
 def make_meeting():
-    company = input("Which company? (ASAP/RME): ").strip().upper()
-    
-    if company == "ASAP":
-        dir_path = meet_dir
-    elif company == "RME":
-        dir_path = rme_meet_dir
-    else:
-        print(f"Unknown company. Please choose ASAP or RME.")
-        sys.exit(1)
-
     meeting_name = input("Which Meeting?: ")
-    
+
     if not meeting_name:
         print("Meeting name cannot be empty")
         sys.exit(1)
 
-    meeting_note_path = dir_path / f"{meeting_name}.md"
+    meeting_note_path = meet_dir / f"{meeting_name}.md"
 
     create_note(
         template_path=meeting_template_path,
         output_path=meeting_note_path,
         replacements={"{{date}}": formatted_date, "{{meeting name}}": meeting_name},
-        dir_path=dir_path,
+        dir_path=meet_dir,
     )
 
 
