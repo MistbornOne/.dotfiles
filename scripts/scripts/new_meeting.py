@@ -1,3 +1,4 @@
+import subprocess
 import sys
 from datetime import date
 from pathlib import Path
@@ -38,6 +39,16 @@ def create_note(template_path, output_path, replacements, dir_path):
 
     print(f"✅ Created Note: {output_path}")
 
+    edit_now = input("Edit now? (y/n): ").strip().lower()
+    if edit_now == "y":
+        subprocess.run(["nvim", str(output_path)])
+    elif edit_now != "n":
+        print("❌ Unknown Option - Exiting")
+        sys.exit(1)
+    else:
+        print("Note created successfully, not editing now.")
+        sys.exit(0)
+
 
 # =====================
 #      Meetings
@@ -64,14 +75,14 @@ def make_meeting():
 # =====================
 def make_coaching_meeting():
 
-    coaching_name = input("Which Employee?: ").strip()
-    initials = "".join([part[0].upper() for part in coaching_name.split() if part])
+    meeting_name = input("Which Employee?: ").strip()
+    initials = "".join([part[0].upper() for part in meeting_name.split() if part])
     coaching_note_path = coaching_dir / f"{initials}.md"
 
     create_note(
         template_path=coaching_template_path,
         output_path=coaching_note_path,
-        replacements={"{{date}}": formatted_date, "{{name}}": coaching_name},
+        replacements={"{{date}}": formatted_date, "{{name}}": meeting_name},
         dir_path=coaching_dir,
     )
 
