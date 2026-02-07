@@ -98,6 +98,7 @@ alias f="~/scripts/fzf_dir.sh"
 alias proj=". ~/scripts/projectspath.sh"
 alias daily=". ~/scripts/daily_note_path.sh"
 alias home=". ~/scripts/home.sh"
+alias lifeos=". ~/scripts/vaultpath.sh"
 
 # Alias Mapping for Functions
 alias jk="clear" 
