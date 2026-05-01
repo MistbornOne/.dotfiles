@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+BEAR_BLOG_PATH=/Users/ianwatkins/dev/github/MistbornOne/blog/bear/
 DEV_BLOG_PATH=/Users/ianwatkins/dev/github/MistbornOne/blog/ian-watkins/
 TERM_BLOG_PATH=/Users/ianwatkins/dev/github/MistbornOne/blog/terminal/
 STORY_BLOG_PATH=/Users/ianwatkins/dev/github/MistbornOne/blog/stories/
@@ -10,12 +11,14 @@ if ! command -v gum &> /dev/null; then
 fi
 
 echo "$(gum style --foreground \#cba6f7 "Which site?:")"
-site_type=$(gum choose --height 3 "ian-watkins" "terminal" "stories")
+site_type=$(gum choose --height 4 "bear" "ian-watkins" "terminal" "stories")
 
 echo "$(gum style --foreground \#cba6f7 "Sync GitHub?")"
   sync_github=$(gum choose --height 2 "yes" "no")
 
-if [[ $site_type == "ian-watkins" ]]; then
+if [[ $site_type == "bear" ]]; then
+    blog_path=$BEAR_BLOG_PATH
+elif [[ $site_type == "ian-watkins" ]]; then
     blog_path=$DEV_BLOG_PATH
 elif [[ $site_type == "terminal" ]]; then
     blog_path=$TERM_BLOG_PATH
@@ -27,11 +30,11 @@ else
 fi
 
 if [[ $sync_github == "yes" ]]; then
-    cd $blog_path || exit 1 
+    cd $blog_path || exit 1
     echo "Syncing GitHub..."
     git pull origin main
     echo "✅ GitHub sync complete."
-  else    
+  else
     echo "Skipping GitHub sync."
     cd $blog_path
 fi
