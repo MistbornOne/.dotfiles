@@ -15,12 +15,9 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		"williamboman/mason-lspconfig.nvim",
 	},
-
 	config = function()
-		local lspconfig = require("lspconfig")
 		local mason_lspconfig = require("mason-lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 		local keymap = vim.keymap
 
@@ -28,74 +25,56 @@ return {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
 				local opts = { buffer = ev.buf, silent = true }
-
 				opts.desc = "Show LSP references"
 				keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
-
 				opts.desc = "Go to declaration"
 				keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-
 				opts.desc = "Show LSP definitions"
 				keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-
 				opts.desc = "Show LSP implementations"
 				keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
-
 				opts.desc = "Show LSP type definitions"
 				keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
-
 				opts.desc = "See available code actions"
 				keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-
 				opts.desc = "Smart rename"
 				keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-
 				opts.desc = "Show buffer diagnostics"
 				keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-
 				opts.desc = "Show line diagnostics"
 				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-
 				opts.desc = "Go to previous diagnostic"
 				keymap.set("n", "[d", function()
 					vim.diagnostic.jump({ count = -1, float = true })
 				end, opts)
-
 				opts.desc = "Go to next diagnostic"
 				keymap.set("n", "]d", function()
 					vim.diagnostic.jump({ count = 1, float = true })
 				end, opts)
-
 				opts.desc = "Show documentation for what is under cursor"
 				keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
 				opts.desc = "Restart LSP"
 				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
 			end,
 		})
 
 		-- diagnostic signs
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		-- install Mason servers
-		mason_lspconfig.setup()
+		-- capabilities applied globally to all servers
+		vim.lsp.config("*", {
+			capabilities = capabilities,
+		})
 
-		-- list of servers to set up with default config
-		local servers = { "graphql", "emmet_ls" }
-
-		for _, server in ipairs(servers) do
-			lspconfig[server].setup({
-				capabilities = capabilities,
-			})
-		end
+		-- servers with default config
+		vim.lsp.enable({ "graphql", "emmet_ls" })
 
 		-- custom svelte config
-		lspconfig["svelte"].setup({
-			capabilities = capabilities,
+		vim.lsp.config("svelte", {
 			on_attach = function(client, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePost", {
 					pattern = { "*.js", "*.ts" },
@@ -105,10 +84,10 @@ return {
 				})
 			end,
 		})
+		vim.lsp.enable("svelte")
 
-		-- custom lua config
-		lspconfig["lua_ls"].setup({
-			capabilities = capabilities,
+		-- custom lua_ls config
+		vim.lsp.config("lua_ls", {
 			settings = {
 				Lua = {
 					diagnostics = {
@@ -120,12 +99,17 @@ return {
 				},
 			},
 		})
+		vim.lsp.enable("lua_ls")
 
+		-- Go: format on save
 		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = "*go",
+			pattern = "*.go",
 			callback = function()
 				vim.lsp.buf.format({ async = false })
 			end,
 		})
+
+		-- let Mason handle server installation
+		mason_lspconfig.setup()
 	end,
 }
