@@ -101,7 +101,7 @@ vimcmd_symbol = "[❮](green)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "bold mauve"
+style = "mauve"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
@@ -129,7 +129,7 @@ style = "green"
 [golang]
 format = "via [$symbol($version )]($style)"
 detect_files = ['go.mod', 'go.sum', 'go.work', 'glide.yaml', 'Gopkg.yml', 'Gopkg.lock', '.go-version']
-style = "bold sapphire"
+style = "sapphire"
 not_capable_style = "red"
 
 [lua]
