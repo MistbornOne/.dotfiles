@@ -8,7 +8,7 @@
 
 # ============  THEMES  ============ 
 
-theme = catppuccin-frappe
+theme = Catppuccin Frappe
 #theme = light:catppuccin-frappe,dark:catppuccin-mocha
 #theme = nord-wave
 #theme = Afterglow
@@ -50,11 +50,11 @@ theme = catppuccin-frappe
 
 
 #Blur
-background-blur-radius = 90
+#background-blur-radius = 90
 
 
 #Opacity
-background-opacity = .90
+#background-opacity = .90
 
 
 
