@@ -99,9 +99,10 @@ alias proj=". ~/scripts/projectspath.sh"
 alias daily=". ~/scripts/daily_note_path.sh"
 alias home=". ~/scripts/home.sh"
 alias lifeos=". ~/scripts/vaultpath.sh"
+alias ai="cd ~/dev/github/MistbornOne/claude"
 
 # Alias Mapping for Functions
-alias jk="clear" 
+alias jk="clear"
 alias fzf="fzf --bind 'enter:become(nvim {})'"
 alias z="source ~/.zshrc"
 
@@ -156,8 +157,3 @@ setopt APPENDHISTORY # Appends commands to the history rather than rewriting
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_FIND_NO_DUPS
-
-
-
-
-

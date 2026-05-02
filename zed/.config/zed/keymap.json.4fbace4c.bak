@@ -1,0 +1,31 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "space w": ["workspace::SendKeystrokes", "save"],
+      "space p": ["workspace::SendKeystrokes", "paste"],
+      "space c": ["workspace::SendKeystrokes", "copy"],
+      "space x": ["workspace::SendKeystrokes", "cut"]
+    }
+  },
+  {
+    "context": "vim_mode == insert && !menu",
+    "bindings": {
+      "j k": ["workspace::SendKeystrokes", "escape"],
+      "J K": ["workspace::SendKeystrokes", "escape"]
+    }
+  }
+]
