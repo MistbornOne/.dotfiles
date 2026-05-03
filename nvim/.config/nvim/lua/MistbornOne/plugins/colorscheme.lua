@@ -4,7 +4,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				flavour = "mocha",
+				flavour = "frappe",
 				styles = {
 					keywords = { "italic" },
 					comments = { "italic" },
@@ -26,9 +26,9 @@ return {
 					CursorLine = { bg = "#3A3A3A" }, -- soft nord0 backgroun
 					["@function.builtin"] = { fg = "#F38BA8" }, -- nord9
 					["@variable"] = { fg = "#BAC2DE" }, -- catppuccin mocha subtext 1
-					["@markup.heading.1.markdown"] = { fg = "#CBA6F7", bold = true }, -- catppuccin mocha mauve
+					["@markup.heading.1.markdown"] = { fg = "#ca9ee6", bold = true }, -- catppuccin frappe mauve
 					["@markup.heading.2.markdown"] = { fg = "#A3BE8C", bold = true }, -- nord14
-					["@markup.heading.3.markdown"] = { fg = "#EBA0AC", bold = true }, -- catppuccin mocha maroon
+					["@markup.heading.3.markdown"] = { fg = "#ea999c", bold = true }, -- catppuccin frappe maroon
 					["@markup.heading.4.markdown"] = { fg = "#88C0D0", bold = true }, -- nord8
 					["@markup.strong.markdown_inline"] = { fg = "#F4B8E4", bold = true }, -- catppuccin mocha pink
 					["@markup.italic.markdown_inline"] = { fg = "#F4B8E4", italic = true }, -- catppuccin mocha pink
