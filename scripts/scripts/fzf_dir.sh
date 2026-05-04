@@ -7,7 +7,7 @@ case "$1" in
   dot) target_dir="$HOME/.dotfiles/" ;;
   dev) target_dir="$HOME/dev/" ;;
   projects) target_dir="$HOME/dev/github/MistbornOne/projects/" ;;
-  blog) target_dir="$HOME/dev/github/MistbornOne/blog/ian-watkins/" ;;
+  blog) target_dir="$HOME/dev/github/MistbornOne/blog/" ;;
   *) echo "Unknown Shorcut:" $1; exit 1 ;;
 esac
 
@@ -15,7 +15,7 @@ esac
 selection=$(fd . "$target_dir" | fzf --height=80% --layout=default --border --preview "bat --style=numbers --color=always {} || head {}")
 
 # Exit if nothing was selected
-[[ -z "$selection" ]] && exit 0
+[[ -z "$selection" ]] && exit 1
 
 # If directory open in nvim with nvim tree
 if [[ -d "$selection" ]]; then

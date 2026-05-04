@@ -7,11 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cursor_shape": "bar",
+  "ui_font_family": "JetBrainsMono Nerd Font",
   "lsp_highlight_debounce": 75,
   "semantic_tokens": "combined",
-  "buffer_font_family": "GoMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "terminal": {
-    "font_family": "GoMono Nerd Font",
+    "font_family": "JetBrainsMono Nerd Font Mono",
   },
   "agent_servers": {
     "claude-acp": {
@@ -47,7 +49,7 @@
         "font_style": "italic",
       },
       "keyword": {
-        "color": "#81A1C1",
+        "color": "#ca9ee6",
         "font_style": "italic",
       },
       "function": {
@@ -69,7 +71,7 @@
         "color": "#A6ADC8",
       },
       "variable": {
-        "color": "#BAC2DE",
+        "color": "#A3BE8C",
       },
       "function.builtin": {
         "color": "#F38BA8",

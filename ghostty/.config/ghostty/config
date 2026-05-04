@@ -35,7 +35,7 @@ theme = Catppuccin Frappe
 #background = #1D1D1D
 
 #blackish
-#background = #18181A
+background = #18181A
 
 #ink
 #background = #222121
@@ -50,11 +50,11 @@ theme = Catppuccin Frappe
 
 
 #Blur
-#background-blur-radius = 90
+background-blur-radius = 90
 
 
 #Opacity
-#background-opacity = .90
+background-opacity = .90
 
 
 

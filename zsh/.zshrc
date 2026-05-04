@@ -94,7 +94,7 @@ alias blog=". ~/scripts/blog.sh"
 alias drive=". ~/scripts/one-drive-path.sh"
 alias games=". ~/scripts/games.sh"
 alias vc=". ~/scripts/nvim_config.sh"
-alias f="~/scripts/fzf_dir.sh"
+alias f=". ~/scripts/fzf_dir.sh"
 alias proj=". ~/scripts/projectspath.sh"
 alias daily=". ~/scripts/daily_note_path.sh"
 alias home=". ~/scripts/home.sh"
@@ -105,6 +105,11 @@ alias ai="cd ~/dev/github/MistbornOne/claude"
 alias jk="clear"
 alias fzf="fzf --bind 'enter:become(nvim {})'"
 alias z="source ~/.zshrc"
+
+# Alias Git Settings
+alias gs="git status"
+alias ga.="git add ."
+alias gp="git push origin main"
 
 #~~~~Envman Settings~~~~
 
@@ -121,14 +126,6 @@ alias z="source ~/.zshrc"
 
 
 
-#~~~~The Fuck Settings~~~~
-
-#Alias
-eval $(thefuck --alias)
-eval $(thefuck --alias fk)
-
-
-
 #~~~~FZF~~~~
 
 eval "$(fzf --zsh)"
@@ -142,9 +139,7 @@ eval "$(fzf --zsh)"
 export BROWSER="safari"
 
 
-
 #~~~~History~~~~
-
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
