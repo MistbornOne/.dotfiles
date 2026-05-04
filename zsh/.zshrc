@@ -6,6 +6,7 @@ path=(
   $path
   $HOME/scripts
   $HOME/.local/opt/go-bin-v1.24.2/
+  /opt/homebrew/bin/
   )
 
 typeset -U path
