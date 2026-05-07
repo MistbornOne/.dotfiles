@@ -95,17 +95,19 @@ alias blog=". ~/scripts/blog.sh"
 alias drive=". ~/scripts/one-drive-path.sh"
 alias games=". ~/scripts/games.sh"
 alias vc=". ~/scripts/nvim_config.sh"
-alias f=". ~/scripts/fzf_dir.sh"
+alias f="~/scripts/fzf_dir.sh"
 alias proj=". ~/scripts/projectspath.sh"
 alias daily=". ~/scripts/daily_note_path.sh"
 alias home=". ~/scripts/home.sh"
 alias lifeos=". ~/scripts/vaultpath.sh"
 alias ai="cd ~/dev/github/MistbornOne/claude"
+alias cowork="cd ~/dev/github/MistbornOne/claude/cowork/"
 
 # Alias Mapping for Functions
 alias jk="clear"
 alias fzf="fzf --bind 'enter:become(nvim {})'"
 alias z="source ~/.zshrc"
+alias sleep="pmset sleepnow"
 
 # Alias Git Settings
 alias gs="git status"

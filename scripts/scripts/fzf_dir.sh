@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 case "$1" in
-  notes) target_dir="$HOME/Documents/Obsidian/" ;;
+  notes) target_dir="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/LifeOS" ;;
   scr) target_dir="$HOME/scripts/" ;;
   nvim) target_dir="$HOME/.config/nvim/" ;;
   dot) target_dir="$HOME/.dotfiles/" ;;
@@ -17,10 +17,5 @@ selection=$(fd . "$target_dir" | fzf --height=80% --layout=default --border --pr
 # Exit if nothing was selected
 [[ -z "$selection" ]] && exit 1
 
-# If directory open in nvim with nvim tree
-if [[ -d "$selection" ]]; then
-  nvim "$selection" -c "NvimTreeOpen"
-else
-  nvim "$selection"
-fi
-
+# Open with Helix and go to end of file
+exec hx "$selection" 
