@@ -1,8 +1,9 @@
-theme = "catppuccin_frappe"
+theme = "mycatfrap"
 
 [editor]
 color-modes = true
-line-number = "relative"
+#line-number = "relative"
+cursorline = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -21,11 +22,15 @@ enable = true
 [keys.insert]
 j = { k = "normal_mode" }
 
+[keys.select]
+j = { k = "normal_mode" }
+
 [keys.normal.space]
 w = ":w"
 q = ":q"
 v = "vsplit"
 h = "hsplit"
+
 
 [keys.normal.w]
 h = "jump_view_left"
@@ -33,4 +38,6 @@ l = "jump_view_right"
 j = "jump_view_down"
 k = "jump_view_up"
 
+[keys.normal]
+Cmd-r = ":config-reload"
 
