@@ -8,6 +8,10 @@ cd ~/.dotfiles || exit 1
 git pull origin main
 
 # (Optional) Re-stow everything in case new folders were added
+
+echo "⌫ Deleting DS_Store files"
+find . -name ".DS_Store" -delete
+
 echo "📦 Restowing packages..."
 stow --restow */
 
