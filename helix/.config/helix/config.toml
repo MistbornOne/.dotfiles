@@ -1,0 +1,36 @@
+theme = "catppuccin_frappe"
+
+[editor]
+color-modes = true
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+enable = true
+
+[editor.soft-wrap]
+enable = true
+
+[keys.insert]
+j = { k = "normal_mode" }
+
+[keys.normal.space]
+w = ":w"
+q = ":q"
+v = "vsplit"
+h = "hsplit"
+
+[keys.normal.w]
+h = "jump_view_left"
+l = "jump_view_right"
+j = "jump_view_down"
+k = "jump_view_up"
+
+
