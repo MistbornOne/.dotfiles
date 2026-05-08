@@ -1,11 +1,11 @@
-!#/bin/bash
+#!/bin/bash
 
 echo "🔄 Updating Brew"
 
-exec brew update || exit 1
+brew update
 
 echo "⏭️ Upgrading Packages"
 
-exec brew upgrade
+brew upgrade
 
 echo "✅ Homebrew Fully Up To Date"

@@ -111,6 +111,8 @@ alias z="source ~/.zshrc"
 alias sleep="pmset sleepnow"
 alias config="hx ~/.zshrc"
 
+
+
 # Alias Git Settings
 alias gs="git status"
 alias ga.="git add ."

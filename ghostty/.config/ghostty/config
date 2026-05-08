@@ -47,8 +47,6 @@ theme = Catppuccin Frappe
 #background = #393939
 
 
-
-
 #Blur
 background-blur-radius = 90
 
@@ -66,6 +64,17 @@ cursor-color =
 # ============ WINDOW ============
 
 window-decoration = true
+
+split-divider-color = #b48ead
+
+keybind = super+alt+arrow_down=unbind
+keybind = super+alt+arrow_up=unbind
+keybind = super+alt+arrow_right=unbind
+keybind = super+alt+arrow_left=unbind
+keybind = super+shift+h=goto_split:left
+keybind = super+shift+l=goto_split:right
+keybind = super+shift+j=goto_split:down
+keybind = super+shift+k=goto_split:up
 
 # ============ FONT SETTINGS ============
 
@@ -96,3 +105,7 @@ font-family-bold-italic = "Maple Mono"
 #font-family = "Symbols Nerd Font Mono"
 
 font-size = 16
+
+
+
+
