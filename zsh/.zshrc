@@ -83,6 +83,7 @@ alias post=". ~/scripts/blogpost.sh"
 alias today='~/scripts/edit_today.sh'
 alias habits=". ~/scripts/habits.sh"
 alias tutor=". ~/scripts/codetutor.sh"
+alias hb="~/scripts/brew.sh"
 
 # Path scripts
 alias dot=". ~/scripts/dotfiles.sh"
@@ -108,6 +109,7 @@ alias jk="clear"
 alias fzf="fzf --bind 'enter:become(nvim {})'"
 alias z="source ~/.zshrc"
 alias sleep="pmset sleepnow"
+alias config="hx ~/.zshrc"
 
 # Alias Git Settings
 alias gs="git status"
