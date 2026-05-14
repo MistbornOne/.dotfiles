@@ -1,9 +1,12 @@
 theme = "mycatfrap"
 
+
 [editor]
 color-modes = true
 #line-number = "relative"
 cursorline = true
+auto-completion = true
+auto-format = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -15,6 +18,10 @@ hidden = false
 
 [editor.lsp]
 enable = true
+display-messages = true
+auto-signature-help = true
+snippets = true
+display-inlay-hints = true
 
 [editor.soft-wrap]
 enable = true
@@ -22,7 +29,7 @@ enable = true
 [keys.insert]
 j = { k = "normal_mode" }
 
-[keys.select]
+[keys.select.space]
 j = { k = "normal_mode" }
 
 [keys.normal.space]
@@ -39,5 +46,6 @@ j = "jump_view_down"
 k = "jump_view_up"
 
 [keys.normal]
-Cmd-r = ":config-reload"
+'A-r' = ":config-reload"
+
 
