@@ -1,0 +1,34 @@
+[[language]]
+name = "python"
+auto-format = true
+
+
+[[language]]
+name = "go"
+auto-format = true
+
+
+[[language]]
+name = "html"
+auto-format = true
+
+
+[[language]]
+name = "css"
+auto-format = true
+
+
+[[language]]
+name = "lua"
+auto-format = true
+
+
+[[language]]
+name = "rust"
+auto-format = true
+
+
+[[language]]
+name = "javascript"
+auto-format = true
+

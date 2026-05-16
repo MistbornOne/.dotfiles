@@ -81,7 +81,7 @@ alias sync="~/scripts/gitsync.sh"
 alias gendate="~/scripts/gendate.sh"
 alias post=". ~/scripts/blogpost.sh"
 alias today='~/scripts/edit_today.sh'
-alias habits=". ~/scripts/habits.sh"
+alias habits="~/scripts/habits"
 alias tutor=". ~/scripts/codetutor.sh"
 alias hb="~/scripts/brew.sh"
 
