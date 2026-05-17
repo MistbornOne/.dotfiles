@@ -1,7 +1,7 @@
 [[language]]
 name = "python"
 auto-format = true
-
+formatter = { command = "ruff", args = ["format", "-"] }
 
 [[language]]
 name = "go"
