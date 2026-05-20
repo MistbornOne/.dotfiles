@@ -92,7 +92,7 @@ alias scr=". ~/scripts/scriptspath.sh"
 alias notes=". ~/scripts/notespath.sh"
 alias idn=". ~/scripts/inkdrop.sh"
 alias dev=". ~/scripts/devpath.sh"
-alias blog=". ~/scripts/blog.sh"
+alias blog="~/scripts/new_blog.sh"
 alias drive=". ~/scripts/one-drive-path.sh"
 alias games=". ~/scripts/games.sh"
 alias vc=". ~/scripts/nvim_config.sh"
@@ -108,7 +108,7 @@ alias cowork="cd ~/dev/github/MistbornOne/claude/cowork/"
 alias jk="clear"
 alias fzf="fzf --bind 'enter:become(nvim {})'"
 alias z="source ~/.zshrc"
-alias sleep="pmset sleepnow"
+alias zzz="pmset sleepnow"
 alias config="hx ~/.zshrc"
 
 
@@ -163,3 +163,133 @@ setopt HIST_FIND_NO_DUPS
 # bun
 export BUN_INSTALL="$HOME/Library/Application Support/reflex/bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# ── blog content helpers ─────────────────────────────────────────────────────
+
+_blog_root() {
+  # Walk up from cwd to find the blog root by looking for the marker file.
+  local dir="$PWD"
+  while [[ "$dir" != "/" ]]; do
+    [[ -f "$dir/astro.config.mjs" && -d "$dir/src/content" ]] && { echo "$dir"; return 0; }
+    dir="${dir:h}"
+  done
+  echo "Error: not inside the blog repo." >&2
+  return 1
+}
+
+_blog_slug() {
+  # Convert a title string to a kebab-case slug.
+  echo "$*" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\{2,\}/-/g' | sed 's/^-//;s/-$//'
+}
+
+# new-post "My Post Title"
+new-post() {
+  local root; root=$(_blog_root) || return 1
+  local title="$*"
+  [[ -z "$title" ]] && { echo "Usage: new-post \"Post Title\"" >&2; return 1; }
+  local slug; slug=$(_blog_slug "$title")
+  local file="$root/src/content/posts/${slug}.md"
+  local date; date=$(date +%Y-%m-%d)
+  cat > "$file" <<FRONTMATTER
+---
+title: "$title"
+date: $date
+description: ""
+tags: []
+draft: true
+---
+FRONTMATTER
+  echo "Created: $file"
+}
+
+# new-book "Book Title" "Author Name"
+new-book() {
+  local root; root=$(_blog_root) || return 1
+  local title="$1" author="$2"
+  [[ -z "$title" || -z "$author" ]] && { echo "Usage: new-book \"Title\" \"Author\"" >&2; return 1; }
+  local slug; slug=$(_blog_slug "$title")
+  local file="$root/src/content/books/${slug}.md"
+  cat > "$file" <<FRONTMATTER
+---
+title: "$title"
+author: "$author"
+amazonUrl: ""
+status: "tbr"
+genre: ""
+---
+FRONTMATTER
+  echo "Created: $file"
+}
+
+# new-book-review "Book Title" "Author Name"
+new-book-review() {
+  local root; root=$(_blog_root) || return 1
+  local title="$1" author="$2"
+  [[ -z "$title" || -z "$author" ]] && { echo "Usage: new-book-review \"Title\" \"Author\"" >&2; return 1; }
+  local slug; slug=$(_blog_slug "$title")
+  local file="$root/src/content/bookreviews/${slug}.md"
+  local date; date=$(date +%Y-%m-%d)
+  cat > "$file" <<FRONTMATTER
+---
+title: "$title"
+author: "$author"
+date: $date
+description: ""
+rating: 5
+tags: []
+draft: true
+amazonUrl: ""
+---
+FRONTMATTER
+  echo "Created: $file"
+}
+
+# new-project "Project Name"
+new-project() {
+  local root; root=$(_blog_root) || return 1
+  local title="$*"
+  [[ -z "$title" ]] && { echo "Usage: new-project \"Project Name\"" >&2; return 1; }
+  local slug; slug=$(_blog_slug "$title")
+  local file="$root/src/content/projects/${slug}.md"
+  cat > "$file" <<FRONTMATTER
+---
+title: "$title"
+description: ""
+url: ""
+repo: ""
+tags: []
+featured: false
+---
+FRONTMATTER
+  echo "Created: $file"
+}
+
+
+
+
+# After adding these, run `source ~/.zshrc` (or open a new terminal tab) and you're good.
+
+# ## Usage
+
+# ```
+# new-post "Why I Love Field Notes"
+# new-book "Deep Work" "Cal Newport"
+# new-book-review "Think Again" "Adam Grant"
+# new-project "My CLI Tool"
+# ```
+
+# Each command prints the created file path, so you can pipe it straight to your editor:
+
+# ```
+# open -a "Cursor" $(new-post "My next post")
+# ```
+
+# ## Notes
+
+# - Posts and book reviews are created with `draft: true` so they won't publish accidentally.
+# - `new-book` defaults to `status: "tbr"` — edit the file to change it to `reading` or `read`.
+# - Optional fields (`url`, `repo`, `amazonUrl`, `canonicalUrl`) are included with empty strings
+#   so you can fill or delete them without looking up the schema. Astro will ignore empty
+#   optional strings as long as the field is marked `.optional()` in the schema — but if you
+#   leave `url`/`repo` as `""` on a project, remove those lines since the schema expects a URL
+#   or nothing (not an empty string).

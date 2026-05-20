@@ -50,7 +50,99 @@ fi
 if [[ $site_type == "Main" ]]; then
     echo "$(gum style --foreground \#b48ead "New Content?:")"
     content_type=$(gum choose --height 6 "Post" "Project" "Book" "Book Review" "No")
-    
+
+    if [[ $content_type != "No" ]]; then
+        slug=$(gum input --placeholder "slug-name (no spaces, no extension)")
+
+        if [[ -z $slug ]]; then
+            echo "No slug entered. Exiting."
+            cd $blog_path
+            exit 1
+        fi
+
+        local temp="${slug:gs/-/ /}"
+        local title="${(C)temp}"
+    fi
+
     if [[ $content_type == "Post" ]]; then
-        
-        
+        cd "$blog_path/posts" || exit 1
+        file="${slug}.mdx"
+        cat > "$file" <<EOF
+---
+title: "$title"
+date: $(date +%Y-%m-%d)
+description: ""
+tags: []
+draft: true
+---
+
+EOF
+        hx "$file"
+
+    elif [[ $content_type == "Project" ]]; then
+        cd "$blog_path/projects" || exit 1
+        file="${slug}.mdx"
+        cat > "$file" <<EOF
+---
+title: "$title"
+description: ""
+url: ""
+repo: ""
+tags: []
+featured: false
+---
+
+EOF
+        hx "$file"
+
+    elif [[ $content_type == "Book" ]]; then
+        cd "$blog_path/books" || exit 1
+        file="${slug}.md"
+        cat > "$file" <<EOF
+---
+title: "$title"
+author: ""
+amazonUrl: ""
+status: "tbr"
+dateRead: ""
+---
+EOF
+        hx "$file"
+
+    elif [[ $content_type == "Book Review" ]]; then
+        book_file="${slug}.md"
+        if [[ ! -f "$blog_path/books/$book_file" ]]; then
+            cat > "$blog_path/books/$book_file" <<EOF
+---
+title: "$title"
+author: ""
+amazonUrl: ""
+genre: ""
+status: "read"
+dateRead: $(date +%Y-%m-%d)
+rating: 4
+---
+EOF
+            echo "✅ Book file created: books/$book_file"
+        else
+            echo "⚠️  Book file already exists: books/$book_file (skipping)"
+        fi
+
+        cd "$blog_path/bookreviews" || exit 1
+        file="${slug}.mdx"
+        cat > "$file" <<EOF
+---
+title: "$title"
+author: ""
+date: $(date +%Y-%m-%d)
+description: ""
+rating: 4
+tags: []
+draft: true
+amazonUrl: ""
+---
+
+EOF
+        hx "$file" "$blog_path/books/$book_file"
+    fi
+fi
