@@ -216,18 +216,21 @@ author: "$author"
 amazonUrl: ""
 status: "tbr"
 genre: ""
+reads:
+- date:
+  rating: 5
 ---
 FRONTMATTER
   echo "Created: $file"
 }
 
 # new-book-review "Book Title" "Author Name"
-new-book-review() {
+new-review() {
   local root; root=$(_blog_root) || return 1
   local title="$1" author="$2"
   [[ -z "$title" || -z "$author" ]] && { echo "Usage: new-book-review \"Title\" \"Author\"" >&2; return 1; }
   local slug; slug=$(_blog_slug "$title")
-  local file="$root/src/content/bookreviews/${slug}.md"
+  local file="$root/src/content/reviews/${slug}.md"
   local date; date=$(date +%Y-%m-%d)
   cat > "$file" <<FRONTMATTER
 ---
@@ -264,32 +267,3 @@ FRONTMATTER
   echo "Created: $file"
 }
 
-
-
-
-# After adding these, run `source ~/.zshrc` (or open a new terminal tab) and you're good.
-
-# ## Usage
-
-# ```
-# new-post "Why I Love Field Notes"
-# new-book "Deep Work" "Cal Newport"
-# new-book-review "Think Again" "Adam Grant"
-# new-project "My CLI Tool"
-# ```
-
-# Each command prints the created file path, so you can pipe it straight to your editor:
-
-# ```
-# open -a "Cursor" $(new-post "My next post")
-# ```
-
-# ## Notes
-
-# - Posts and book reviews are created with `draft: true` so they won't publish accidentally.
-# - `new-book` defaults to `status: "tbr"` — edit the file to change it to `reading` or `read`.
-# - Optional fields (`url`, `repo`, `amazonUrl`, `canonicalUrl`) are included with empty strings
-#   so you can fill or delete them without looking up the schema. Astro will ignore empty
-#   optional strings as long as the field is marked `.optional()` in the schema — but if you
-#   leave `url`/`repo` as `""` on a project, remove those lines since the schema expects a URL
-#   or nothing (not an empty string).
